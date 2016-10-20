@@ -8,8 +8,11 @@
 	    padding: .95em .82em 0 1.4em;
 	    top: -.3em;
 	    border: none;
-	    width: 14.5em;
+	    width: 12.5em;
 	    left: -1.9em;
+	        top: -4.5em;
+  
+    left: -5.15em;
 	    box-shadow: 0 0 0 1px #d4d4d4;
 	    background: white;
 	    margin-top: -1.25em;
@@ -27,6 +30,8 @@
 	    background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); /* Chrome 10-25, Safari 5.1-6 */
 	    /* background: linear-gradient(to left, #dfe6f5 , #eff4fb); */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	    border-radius: 8px;
+	    width: 10.25em;
+    height: 5.3em;
 	}
 
 

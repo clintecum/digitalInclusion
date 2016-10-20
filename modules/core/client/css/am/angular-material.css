@@ -160,6 +160,7 @@ html, body {
   background-image: url('/modules/core/client/img/bg/sqBg.png');
   -moz-osx-font-smoothing: grayscale;
   background-image: none;
+  background: #BBDEFB;
   }
 
 /************
@@ -936,8 +937,10 @@ md-card {
     display: block;
     padding: 16px;
     position: relative;
+    padding-bottom: 0;
     padding-left: 0;
     /* left: 22px; */
+    background: transparent;
     }
     md-card md-card-content > p:first-child {
       margin-top: 0; }

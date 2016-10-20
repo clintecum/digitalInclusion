@@ -33,13 +33,16 @@
 	div#buttons-wrapper {
     /*top: 4.5em;*/
 	    left: 10.2em;
+	        top: .75em;
 	}
 	#header h1 {
-	    padding-top: .75em;
-	    left: -3.7em;
-	    /*width: 36em;*/
-	    margin: .15em auto .1em auto;
-	}
+    padding-top: .75em;
+    left: -1.55em;
+    width: 23em;
+    top: -4.9em;
+    height: 7em;
+    margin: .15em auto .1em auto;
+}
 }
 
 @media (max-width: 670px) {

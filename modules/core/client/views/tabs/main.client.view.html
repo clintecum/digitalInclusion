@@ -1,8 +1,10 @@
 <span ng-controller="MapController">
-  <header id="header" class="pt-page-moveFromLeftFade">  
-    <h1 id="headerH1" class="sh-up c-sat">Map of Free Services</h1>
-    <p id="headerP" class="sh-up">Greater Kansas City</p>
-  </header>
+  <span class="extra-hack">
+    <header id="header" class="pt-page-moveFromLeftFade">  
+      <h1 id="headerH1" class="sh-up c-sat">MAP OF SERVICES</h1>
+      <p id="headerP" class="sh-up">Greater Kansas City</p>
+    </header>
+  </span>
 
 
  
@@ -11,12 +13,12 @@
     <div id="buttons-wrapper">
       <ul id="alt-buttons-top"">
         <li><md-button id="e1" ng-click="toggleWifiMarkers(); switchToggleState()" class="md-raised md-ink-ripple">Free WiFi</md-button></li>
-        <li><md-button id="e3" ng-click="toggleComputersMarkers();" class="md-raised md-ink-ripple">Public Computers</md-button></li>
+        <li><md-button id="e3" ng-click="toggleComputersMarkers();" class="rmg md-raised md-ink-ripple">Public Computers</md-button></li>
       </ul>
 
       <ul id="alt-buttons-bottom">
         <li><md-button id="e2" ng-click="toggleTrainingMarkers();" class="md-raised md-button md-ink-ripple">Computer Training</md-button></li>
-        <li><md-button id="e4" ng-click="toggleRefurbsMarkers();" class="md-raised md-ink-ripple">Low Cost Computers</md-button></li>
+        <li><md-button id="e4" ng-click="toggleRefurbsMarkers();" class="md-raised md-ink-ripple rmg">Low Cost Computers</md-button></li>
       </ul>
     </div>
 
@@ -51,7 +53,9 @@
                     <td class="rbor">
                       <!-- <i class="fa fa-wifi fa-2x" aria-hidden="true"></i> Public<br>WiFi -->
                     <!-- <img class="small-img" src="modules/core/client/img/wifi-free.svg">  -->
-                    <i id="publicWifi" class="fa fa-wifi legend-icon-a"></i> <span class="uline">Public</span><br>WiFi
+                      <span class="pro-hack">
+                        <i id="publicWifi" class="fa fa-wifi legend-icon-a"></i> <span class="uline">Public</span><br><span class="wifi-legend">WiFi</span>
+                      </span>
 
                     </td>
 
@@ -59,17 +63,25 @@
                       <!-- <span id="training-day-user" class="glyphicon glyphicon-user"></span> -->
                      <!-- Training<br>(daytime). -->
                     <!-- <img class="small-img" src="modules/core/client/img/user-orange2.png">  -->
-                    <i id="daytimeTraining" class="fa fa-user legend-icon-b"></i> Training<br><span class="zline">(daytime)</span>
+                    <span id="day_training" class="kaz">
+                      <i id="daytimeTraining" class="fa fa-user legend-icon-b"></i> <span class="oline">Day</span><br><span class="zline">Training</span>
+                    </span>
 
                     </td>
                   </tr>
                   <tr class="ffh">
                     <td class="move-up rbor">
                     <!-- <img class="small-img" src="modules/core/client/img/wifi-purchase.svg"> -->
-                    <i id="customerWifi" class="fa fa-wifi legend-icon-a"></i><span class="bline">Customer</span><br>WiFi</td>
+                      <span class="pro-hack">
+                        <i id="customerWifi" class="fa fa-wifi legend-icon-a"></i><span class="bline">Customer</span><br><span class="wifi-legend">WiFi</span>
+                      </span>
+                    </td>
                     <td class="toleft move-up">
                     <!-- <img class="small-img" src="modules/core/client/img/user-blue2.png"> -->
-                     <i id="eveningTraining" class="fa fa-user legend-icon-b"></i> Training<br><span class="zline">(after 6pm)</span></td>
+                      <span id="night_training" class="kaz">
+                        <i id="eveningTraining" class="fa fa-user legend-icon-b"></i> <span class="oline">Night</span><br><span class="zline">Training</span>
+                     </span>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -103,15 +115,14 @@
         <div class="row map-row">
       
             <div id="printArea" class="col-xs-12 col-sm-12 col-md-12 col-md-12">
-              <div id="svgWrap" ng-show="loading" class="pt-page-moveFromLeft">
-                <div id="onloadSpinner" class="c-loader">        
-                  <img src="/modules/core/client/img/loaders/puff.svg" />
-                </div>
-                <h4 class="absolutePos">Loading Map</h4>
-              </div>
-                <!-- <input id="pac-input" class="controls" type="text" placeholder="Search by Zip"> -->
+
+
             
-             <section id="customMap" class="vis-on pt-page-rotateUnfoldBottom"></section>
+                <!-- <input id="pac-input" class="controls" type="text" placeholder="Search by Zip"> -->
+            <!-- class="transformable"  -->
+             <section id="customMap" class="vis-on pt-page-rotateUnfoldBottom resizeable"></section>
+
+            
 
 
             <div id="zipSearchError" class="pt-page-rotateRoomLeftIn">
@@ -273,126 +284,50 @@
               </main>
             </section>
 
-              <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">       
+              <!-- <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">        -->
+              <section id="sw" class="full-side sidewin-ctrl pt-page-rotateUnfoldRightFast">
                 <div id="wrapExit">
-                  <a id="winCtrl" ng-click="removeWindow()" class="rmv">
-                     <span id="rmv-glyph" class="glyphicon glyphicon-remove-circle"></span>
+                  <a id="winCtrl" ng-click="removeWindow(); unsetActive();" class="rmv">
+                     <!-- <span id="rmv-glyph" class="glyphicon glyphicon-remove-circle"></span> -->
+                     <span id="rmv-glyph" class="">
+                       <img src="modules/core/client/img/close.png"/>
+                     </span>
                   </a>
                 </div>
-                <div id="info-wrapper" class="slide-pop.ng-enter">
-
-
-                  <md-content class="md-padding" layout-xs="column" layout="row">
-                    <div flex-xs flex-gt-xs="100" layout="column">
-
-
-                      <md-card id="hacksalot" md-theme="dark-blue" md-theme-watch>
-
-                        
-
-
-                        <md-card-content>
-                          
-
-                          <div class="cest" id="lavie">
-                            <div id="windowWrapper">
-                            <span id="categoryBanner">
-                            <img id="imgPath" src="" class="md-card-image simg" alt="">
-                            <!-- <img ng-src="{{swImagePath}}" class="md-card-image simg" alt=""> -->
-                            <div id="placeCategory" class="f1 f-class"></div>
-                            </span>
-
-
-                            <div id="placeTitle" class="f2 f-class"></div>
-                            <a href="" id="phoneNumb"><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
-                            <div id="placeAddress" class="f3 f-class"></div>
-                         <!--    <span id="placeCity" class="f3 f-class"></span>
-                            <span id="placeState" class="f3"></span><br>
-                            <span id="placeZip" class="f3 f-class"></span><br> -->
-                             <a id="map-directions" target="_blank" class="view-dir" href=""> View directions on Google maps</a>
-
-                            <!-- <div id="placeHours" class="f-class"></div>    -->
-                            <span id="hrsdsc">
-                              <p id="hrsHead">Operating hours:</p>
-                              <aside id="opHours">
-                                <span class="daySpan">Sunday:</span> <p id="opSun" class="opDay"></p><br>
-                                <span class="daySpan">Monday:</span> <p id="opMon" class="opDay"></p><br>
-                                <span class="daySpan">Tuesday:</span> <p id="opTue" class="opDay"></p><br>
-                                <span class="daySpan">Wednesday:</span> <p id="opWed" class="opDay"></p><br>
-                                <span class="daySpan">Thursday:</span> <p id="opThu" class="opDay"></p><br>
-                                <span class="daySpan">Friday:</span> <p id="opFri" class="opDay"></p><br>
-                                <span class="daySpan">Saturday:</span> <p id="opSat" class="opDay"></p>
-                              </aside>
-                              <aside id="opHoursNA">Not available</aside>
-                              <!-- <a class="f-class" id="placeUrl">Website</a> -->
-
-                              <p id="dscHead">Description:</p>
-                              <div class="f4 f-class f-desc" id="placeDescription"></div>
-                              <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map
-                              </a>
-                              <br>
-                            </span>
-                          </div>
-                        </div>
-                         
-                          
-
-                          <!-- <span id="ihHours" class="info-heading">Hours</span> -->
-                          
-                          <!-- <md-divider id="bottom-divider"></md-divider> -->
-                          <!-- <span id="ihDescription" class="info-heading">Description</span> -->
-                          
-                          <!-- <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a> -->
-                    
-                        </md-card-content>
-              <!--           <md-card-actions layout="row" layout-align="end center">
-                          <md-button>Action 1</md-button>
-                          <md-button>ultrachic
-                            
-
-                          </md-button>
-                        </md-card-actions> -->
-                      </md-card>
-                     
-                     <!--  <div layout layout-padding layout-align="center end" style="height:200px">
-                        <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
-                      </div> -->
-                    </div>
-                  </md-content>
-
-
-
-
-
-
-
-
-
-
-
-
-         <!--          <img class="infowindow-img" src="/modules/core/client/img/wifi-free-2.svg" ng-show="showImgFw">
-                  <img class="infowindow-img" src="/modules/core/client/img/wifi-purchase.svg" ng-show="showImgCw">
-                  <img class="infowindow-img" src="/modules/core/client/img/user-orange2.png" ng-show="showImgDt">
-                  <img class="infowindow-img" src="/modules/core/client/img/user-blue2.png" ng-show="showImgNt">
-                  <img class="infowindow-img" src="/modules/core/client/img/computerRetail.png" ng-show="showImgCr">
-                  <img class="infowindow-img" src="/modules/core/client/img/computerAccess.png" ng-show="showImgCa">
-                  <div id="placeCategory" class="f1 f-class"></div>
-                    <div id="placeTitle" class="f2 f-class"></div>
-                    <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
-                  <div class="cist">
-                    <div id="placeAddress" class="f3 f-class"></div>
-                    <span id="placeCity" class="f3 f-class"></span>
-                    <span id="placeState" class="f3"></span><br>
-                    <span id="placeZip" class="f3 f-class"></span>   
+                <div id="info-wrapper" class="slide-pop.ng-enter">               
+                  <div class="cest" id="lavie">
+                    <div id="windowWrapper">
+                      <span id="categoryBanner">
+                        <img id="imgPath" src="" class="md-card-image simg" alt="">
+                        <div id="placeCategory" class="f1 f-class"></div>
+                      </span>
+                      <div id="placeTitle" class="f2 f-class"></div>
+                      <a href="" id="phoneNumb">
+                        <i class="fa fa-phone"></i> 
+                        <span id="placePhone" class="f-class"></span>
+                      </a>  
+                      <div id="placeAddress" class="f3 f-class"></div>
+                      <a id="map-directions" target="_blank" class="view-dir" href=""> Get directions</a>
+                      <span id="hrsdsc">
+                        <p id="hrsHead">HOURS:</p>
+                        <aside id="opHours">
+                          <span class="daySpan">Sunday:</span> <p id="opSun" class="opDay"></p><br>
+                          <span class="daySpan">Monday:</span> <p id="opMon" class="opDay"></p><br>
+                          <span class="daySpan">Tuesday:</span> <p id="opTue" class="opDay"></p><br>
+                          <span class="daySpan">Wednesday:</span> <p id="opWed" class="opDay"></p><br>
+                          <span class="daySpan">Thursday:</span> <p id="opThu" class="opDay"></p><br>
+                          <span class="daySpan">Friday:</span> <p id="opFri" class="opDay"></p><br>
+                          <span class="daySpan">Saturday:</span> <p id="opSat" class="opDay"></p>
+                        </aside>
+                        <aside id="opHoursNA">Not available</aside>
+                        <p id="dscHead">DESCRIPTION:</p>
+                        <div class="f4 f-class f-desc" id="placeDescription"></div>
+                        <a id="dep" class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i>
+                        </a>
+                        <br>
+                      </span>
+                    </div>                    
                   </div>
-                  <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
-                  <div id="placeHours" class="f-class"></div>
-                  <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
-                  <div class="f4 f-class f-desc" id="placeDescription"></div>
-                  <div class="f-class" id="placeUrl"></div> -->
-
-
                 </div>
               </section>
         

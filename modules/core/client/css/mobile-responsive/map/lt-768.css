@@ -1,37 +1,36 @@
 @media (max-width: 768px) {
 	section#customMap {
-		height: 615px;
-		border-left: 1px solid #626f64;
-		border-right: 1px solid #637766;
-		box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
-		border: 2px solid #676f03;
-		box-shadow: 0 0 1px #c8d473, 0 0 10px black;
-		margin-top: 13.3em;
-		margin-bottom: 2.7em;
-		width: 99.5%;
-		padding-right: 8em;
-		margin-left: 0;
-		border: none;
-		border-top: 1px solid #2d2d00;
-		border: 1px solid #7b7b76;
-		border-radius: 8px;
-		border: none;
-		    left: .05em;
-		
+	    height: 615px;
+	    border-left: 1px solid #626f64;
+	    border-right: 1px solid #637766;
+	    box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
+	    border: 2px solid #676f03;
+	    box-shadow: 0 0 1px #c8d473, 0 0 10px black;
+	    margin-top: 14.6em;
+	    margin-bottom: 2.7em;
+	    width: 99.5%;
+	    padding-right: 8em;
+	    margin-left: 0;
+	    border: none;
+	    border-top: 1px solid #2d2d00;
+	    border: 1px solid #7b7b76;
+	    border-radius: 8px;
+	    border: none;
+	    left: -.75em;
 	}
 	#header h1 {
 		left: 0;
 	}
 	md-card#overlay-data-window {
-	    width: 50%;
-	    height: 11em;
-	    border: 1px solid #BDBDBD;
-	    padding: 0 .4em .4em .4em;
-	    margin: .3em auto;
-	    border: 3px double #E0E0E0;
-	    text-align: center;
-	    background: #F5F5F5;
-	}
+    width: 50%;
+    height: 11em;
+    border: 1px solid #BDBDBD;
+    padding: 0 .4em .4em .4em;
+    margin: 1.75em auto;
+    border: 3px double #E0E0E0;
+    text-align: center;
+    background: #ffffff;
+}
 
 	main#main-page {
     margin-left: -1.8em;
@@ -41,12 +40,12 @@
 	        top: -2.92em;
 	}
 div#mobServiceOverlay {
-    height: 11.7em;
+    height: 14.7em;
     position: fixed;
-    top: 36.25em;
-    left: 1.2em;
+    top: 35.25em;
+    left: .45em;
     z-index: 99999;
-    width: 95%;
+    width: 98.1%;
     background: #ECEFF1;
     border: none;
     border-top: 3px double #b7b7b7;
@@ -62,9 +61,9 @@ div#mobServiceOverlay {
 
 	a#exit-service-overlay.fa-close {
 	    position: absolute;
-	    left: 35.15em;
+	    left: 34.25em;
 	    border: 3px solid red;
-	    top: .2em;
+	    top: 1.8em;
 	    border: none;
 	    color: #212121;
 	    z-index: 99999;
@@ -122,5 +121,65 @@ div#mobServiceOverlay {
 	    top: 12em;
 	}
 */
+	
+	.map-row {
+	    position: relative;
+	    top: -8em;
+	    margin: 0;
+	    padding: 0;
+	}
 
+#header h1 {
+    letter-spacing: .02pc;
+    left: 3em;
+    top: -6.5em;
+    height: 5.5em;
+    width: 17.25em;
+    padding-top: .5em;
+}
+	button#e1, button#e2, button#e3, button#e4 {
+    font-size: 10px;
+    background: #FAFAFA;
+    border: 1px solid #ccc;
+    margin: 3px 8px;
+    min-height: 16px;
+    height: 26px;
+}
+	div#buttons-wrapper ul li button span.ng-scope {
+    position: relative;
+    top: -.2em;
+    top: -.45em;
+}
+
+	#header p#headerP {
+        top: -14.7em;
+    left: -2.4em;
+    letter-spacing: -.01pc;
+}
+	div#buttons-wrapper {
+	    position: absolute;
+	    left: 12em;
+	    width: 22.4em;
+	    margin: 0;
+	    padding: 0;
+	    top: -2.3em;
+	    z-index: 99999;
+	    border: none;
+	}
+
+	button.navbar-toggle {
+	    max-width: 10px;
+	    /* height: 12px; */
+	    /* padding: 0; */
+	    /* margin-right: -60px; */
+	    /* border: none; */
+	    /* outline: none; */
+	        left: 58em;
+	    top: 2.8em;
+	    position: absolute;
+	    border-color: ivory;
+	    display: initial;
+	    box-shadow: none;
+	    z-index: 99999;
+	}
 }

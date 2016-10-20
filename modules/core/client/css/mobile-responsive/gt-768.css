@@ -1,7 +1,19 @@
 @media (min-width: 769px) {
+
+	span.oline {
+    position: relative;
+    left: 2px;
+}
+	span.bline {
+    position: relative;
+    left: 3px;
+}
 	div#windowWrapper {
 	    border: 2px solid #eeeeee;
+	        border: 1px solid #dcdcdc;
 	    margin: 1em 1em;
+	    background: #fcfeff;
+	    box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.13);
 	}
 	.custom-dd-toggle {
 		display: none;
@@ -74,14 +86,58 @@
 	    top: 10em;
 	}
 	div.cest {
-	    left: 9px;
+	    left: 8px;
 	    position: relative;
-	    margin-top: -.6em;
+	    margin-top: -.15em;
+	    
 	    padding: .2em 0 2.5em 0;
 	}
 	.row.butane {
 		box-shadow: none;
 	    border: none;
 	    background: none;
+	}
+
+	.table-wrapper {
+		height: 4.5em;
+    	width: 10.25em;
+    	top: -8.8em;
+	}
+
+	div#buttons-wrapper ul li button span.ng-scope {
+	    position: relative;
+	    top: -.2em;
+	    top: -.75em;
+	}
+
+	button#e1, button#e2, button#e3, button#e4 {
+	    font-size: 8px;
+	    width: 145px;
+	    min-height: 30px;
+	    width: 105px;
+	    /* font-size: 8px; */
+	    letter-spacing: -.0125pc;
+	}
+
+	div#buttons-wrapper {
+	    top: 4.45em;
+	    left: 8.95em;
+	}
+
+
+
+	section.meta-w-form {
+	    top: -9.75em;
+	    width: 25.7em;
+	    left: 4.35em;
+	    height: 5.85em;
+	}
+
+	aside#opHours p.opDay {
+	    /*font-size: .8em;*/
+	    color: black;
+	    opacity: .8;
+	    text-shadow: none;
+
 	}
 }

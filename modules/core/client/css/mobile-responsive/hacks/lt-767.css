@@ -1,6 +1,6 @@
 @media (max-width: 767px) {
 	.navbar {
-		top: -1em;
+		top: -1.9em;
 	}
 	#header h1 {
 		    margin-top: .1em;
@@ -8,14 +8,25 @@
     margin-left: -6.85em;
 	}
 	button.navbar-toggle {
-
-	    left: .2em;
-	    top: .5em;
+		    top: 1.6em;
+	  /*  left: .2em;
+	    top: .5em;*/
 	
 	}
 	div#mobServiceOverlay {
-
-	    top: 36.5em;
-	
+    top: 36em;
+}
+	#header p#headerP {
+	    top: -15.25em;
+	    left: -2.4em;
+	    letter-spacing: -.01pc;
+	}
+	#header h1 {
+	    letter-spacing: .02pc;
+	    left: 10.5em;
+	    top: -6.5em;
+	    height: 5.85em;
+	    width: 16.05em;
+	    padding-top: .5em;
 	}
 }

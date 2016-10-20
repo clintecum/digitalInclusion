@@ -2,9 +2,11 @@
   <div class="navbar-header">
     <button class="navbar-toggle custom-dd-toggle" type="button" ng-click="vm.isCollapsed = !vm.isCollapsed">
       <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
     </button>
     <a ui-sref="home" class="navbar-brand">DIGITAL INCLUSION</a>
   
@@ -33,24 +35,26 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right hide-guest-menu">
+
       <li ui-sref-active="active">
-        <a ui-sref="home">Map of Free Services in Kansas City</a>
+        <br>
+        <a ui-sref="home">MAP OF SERVICES</a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="places.create">Add Service</a>
+        <a ui-sref="places.create">ADD SERVICE</a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="internet">Internet at Home (service providers)</a>
+        <a ui-sref="internet">INTERNET AT HOME</a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="training-online">Training Online</a>
+        <a ui-sref="training-online">TRAINING ONLINE</a>
       </li>
       <!-- <li class="divider-vertical"></li><br> -->
       <li ui-sref-active="active">
-        <a ui-sref="about">About Us</a>
+        <a ui-sref="about">ABOUT US</a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="contact">Contact Us</a>
+        <a ui-sref="contact">CONTACT US</a>
       </li>
       <li class="divider"></li><br>
       <li ng-show="vm.authentication.user">

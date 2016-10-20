@@ -1,23 +1,51 @@
 @media (max-width: 1000px) {
-
+	span.extra-hack {
+		position: relative;
+		top: .4em;
+	}
+	span.wifi-legend {
+		position: relative;
+		left: -.6em;
+		left: -1.55em;
+    top: .5em;
+	}
+	span.pro-hack {
+		position: relative;
+		top: -.25em;
+	}
 	button#e1, button#e2, button#e3, button#e4 {
-		font-size: 10px;
-		width: 145px;
-		min-height: 30px;
+    font-size: 8px;
+    width: 145px;
+    min-height: 30px;
+    width: 115px;
+    /* font-size: 8px; */
+    letter-spacing: -.001pc;
 	}
 	button#e3, button#e4 {
 		position: relative;
 		top: -.7em;
 	}
-div#buttons-wrapper {
-    position: absolute;
-    top: 6em;
-    left: 6.85em;
-    z-index: 99999;
-}
+	div#buttons-wrapper {
+	    position: absolute;
+	    top: 6em;
+	    left: 6.85em;
+
+	    z-index: 99999;
+	}
 	div#buttons-wrapper ul li button span.ng-scope {
 	    position: relative;
 	    top: -.2em;
+	        top: -.5em;
+	}
+	i.legend-icon-b {
+	    position: relative;
+	    left: .85em;
+	    top: .4em;
+	}
+	i.legend-icon-a {
+	    position: relative;
+	    left: .35em;
+	    top: .4em;
 	}
 	#main {
 		box-shadow: none;
@@ -46,6 +74,7 @@ div#buttons-wrapper {
 		letter-spacing: 0.12em;
 		color: #353533;
 		color: #585858;
+		    margin-top: .55em;
 		padding-top: .95em;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 	}
@@ -53,9 +82,11 @@ div#buttons-wrapper {
 	    margin-right: .3em;
 	}
 	i.fa.fa-phone {
-	    color: darkgreen;
-	    font-size: .75em;
-	}
+    color: #051f05;
+    font-size: .535em;
+    position: relative;
+    top: -1px;
+}
 	p.tab-p {
 	    position: relative;
 	    top: -4.5em;
@@ -105,15 +136,15 @@ div#buttons-wrapper {
     position: relative;
     height: 3.3em;
     letter-spacing: 1.29px;
-    font-size: 16px;
+    font-size: 22px;
     border: 1px solid #ccc;
     font-family: Georgia;
-    top: -5.4em;
-    left: -6.05em;
+    top: -4.2em;
+    left: -10.05em;
     width: 58.75em;
 }
 md-card#hacksalot {
-    height: 600px;
+    height: 100%;
 }
 	a.pure-button.x-small-custom {
 		font-size: .5em;
@@ -175,7 +206,7 @@ md-card#hacksalot {
 	    cursor: default;
 	    background: transparent;
 	    border: 1px solid #ddd;
-	        margin-top: -.225em;
+	        margin-top: .045em;
 	    padding-top: 1.35em;
 	    padding-bottom: 2.364em;
 	    height: 2.8em;
@@ -188,13 +219,17 @@ md-card#hacksalot {
 	    box-shadow: none;
 	    border-top-right-radius: .5em;
 	    border-radius: 24px;
+	        font-size: .675em;
 	    /* text-shadow: none; */
 	}
 	div#placeAddress {
-		margin-top: .4em;
-		position: relative;
-		top: .84em;
-	}
+    margin-top: .4em;
+    position: relative;
+    top: .84em;
+    margin-left: 4.5em;
+    width: 10em;
+    line-height: 13px;
+}
 	.f3 {
 		font-size: .7em;
 	}
@@ -217,7 +252,7 @@ md-card#hacksalot {
     line-height: 11px;
 }
 	div#placeTitle {
-		letter-spacing: .75px;
+		    letter-spacing: -.1px;
 	}
 	div#placeHours {
 		font-size: .55em;
@@ -240,35 +275,37 @@ md-card#hacksalot {
 	}
 	
 	span#placePhone {
-		font-size: .7em;
-		letter-spacing: .64px;
-		font-weight: 500;
-		color: #2e5375;
-		position: relative;
-		margin-left: .3em;
-		top: -.1em;
+	    font-size: .75em;
+	    letter-spacing: -.1px;
+	    color: #091a29;
+	    position: relative;
+	    margin-left: .3em;
+	    top: -.1em;
 	}
 
 	section#queryForm {
-	    position: relative;
-	    top: .25em;
-	    left: -1em;
-	    height: 2em;
-	    display: initial;
-	    top: -9.3em;
-	}
+    position: relative;
+    top: .25em;
+    left: 3em;
+    height: 2em;
+    display: initial;
+    top: -8.5em;
+}
 /*}
 */
 	.f-desc {
-		border: none;
-		padding: .5em 9em;
-		text-align: start;
-		margin-left: .3em;
-		width: 95%;
-		line-height: 11px;
-		font-size: .6em;
-		border: none;
-		background: none;
+	    border: none;
+	    padding: .5em 9em;
+	    text-align: start;
+	    margin-left: -3.75em;
+	    width: 30em;
+	    position: relative;
+	    top: -.85em;
+	    line-height: 11px;
+	    font-size: .65em;
+	    border: none;
+	    background: none;
+	    overflow: hidden;
 	}
 
 	.fm-zip {
@@ -331,20 +368,28 @@ md-card#hacksalot {
 		position: relative;
 		border-right: none;
 		text-align: center;
+		    left: 2em;
+    top: -2.25em;
 	}
 
 	aside#opHours {
-	    font-size: .7em;
-	    line-height: 13px;
+	    font-size: .6em;
+	    line-height: 11px;
+	    text-align: left;
+	    letter-spacing: -.012pc;
+	    margin-left: 67px;
 	}
 
 	aside#opHours p.opDay {
 	    top: -.1em;
+	    font-size: .9em;
 	}
 	#header p#dscHead {
 		position: relative;
-	    top: 2.5em;
+	    top: 1.5em;
 	    letter-spacing: normal;
+	        font-weight: 900;
+    text-shadow: none;
 	}
 	section#customMap {
 	    height: 637px;
@@ -366,15 +411,21 @@ md-card#hacksalot {
 	    border-bottom: 1px solid #ccc;
 	}
 
+	div#windowWrapper {
+		height: 612px;
+	}
+
 
 	#header p#hrsHead {
 	    top: 1.8em;
-	        letter-spacing: normal;
+	    letter-spacing: normal;
+	     font-weight: 900;
+    	text-shadow: none;
 	}
 
 	button#e2, button#e1, button#e3, button#e4 {
 
-	    width: 145px;
+	    /*width: 145px;*/
 	
 	}
 
@@ -384,6 +435,7 @@ md-card#hacksalot {
     left: 58.75%;
     height: 602px;
     width: 19.55em;
+        width: 20.15em;
     background: none;
     /* background: #1b374e; */
     clear: both;
@@ -419,11 +471,11 @@ md-card#hacksalot {
 	    display: inline;
 	    z-index: 99999;
 	    position: relative;
-	    top: -.8em;
+	    top: .6em;
 	    font-weight: 100;
 	    font-size: .9em;
 	    color: #1f1808;
-	    left: 4.7em;
+	    left: 6.8em;
 	    height: 8px;
 	    width: 14px;
 	    padding-top: 0;
@@ -603,24 +655,76 @@ div#info-wrapper {
     background: #f3f3f3;
     border: 1px solid #bbbaba;
     /* box-shadow: inset 0 0 100px #f3f3f3; */
-    width: 119%;
+    width: 105%;
     display: inline-block;
-    height: 638px;
+    height: 688px;
     border: 1px solid #e2e2e2;
     font-weight: 400;
     position: relative;
     box-shadow: 0 0 1px #3e3e3e;
-    top: -1.7em;
-    padding-left: 1em;
+    top: -1.9em;
+    left: -13px;
+    padding-left: .1em;
     padding-right: .25em;
     color: black;
     font-family: "Source Sans Pro", Helvetica, sans-serif;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 	img#imgPath {
 	    width: 8%;
 	}
+
+		#main input[type=text], #main input[type=password], #main input[type=email], #main select, #main textarea {
+    background: rgba(245, 251, 255, 0.99);
+    border-color: #bdced4;
+    height: 1.1em;
+    border-radius: 10px;
+}
+	section#queryForm {
+    position: relative;
+    top: .25em;
+    left: 3em;
+    height: 1.4em;
+    display: initial;
+    top: -14.35em;
+}
+
+#sw {
+    display: none;
+    position: absolute;
+    left: 70.6%;
+    height: 636px;
+    width: 243px;
+    background: radial-gradient(#e1ecf5,#e4eef1,#f0fbff);
+    background: #fffbf7;
+    clear: both;
+    border: 1px solid #9e9e9e;
+    box-shadow: 0 0 4px #5d5d5d;
+    border-left: .2em solid gray;
+    top: -53px;
+    border-left: 1px solid #070a0a;
+    /* border-left: none; */
+    border-right: none;
+    margin-left: 0;
+    /* box-shadow: 0 0 0 3px gray; */
+    padding: 0 0 2em 0;
+    border: none;
+    border-top: 1px solid #d4dae0;
+    background: #f1f1ef;
+    box-shadow: none;
+}
+
+section#customMap {
+    top: -12.4em;
+    left: -3.4em;
+    width: 724px;
+}
+
+.map-row {
+    position: relative;
+    top: -10.8em;
+}
 
 }
 

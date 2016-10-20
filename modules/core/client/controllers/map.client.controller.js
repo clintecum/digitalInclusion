@@ -18,6 +18,7 @@ var list = {};
 
 	function MapController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition, getPlacesService) {
 
+		
 	    var browser = $window.navigator.appCodeName;   
 	    var zipcodes = zipcode.getZipcodes();
 	    var libertyMemorial = [39.081009, -94.585944];
@@ -215,9 +216,7 @@ $scope.thisBounds;
 
 
 	setTimeout(function() {
-		console.log("5 seconds");
-		console.log($scope.markers.wifi.free.length);
-		console.log($scope.markers.wifi.customer.length);
+
 		var a = $scope.markers.wifi.free.length;
 		var b = $scope.markers.wifi.customer.length;
 		if (a===0) {
@@ -705,7 +704,7 @@ mSo.style.display="none";
 		function recenterToMarker() {
 
 			var center = $scope.bouncingMarker.getPosition();
-			 $scope.map.setZoom(17);
+			 $scope.map.setZoom(16);
 			    $scope.map.setCenter(center);
 
 			// marker.addListener('click', function() {
@@ -891,68 +890,125 @@ mSo.style.display="none";
         var len = str.length;
 
         if (len >= 280) {
-        	console.log("description too long");
+        	// console.log("description too long");
         	html.style.maxHeight = "180px";
         	html.style.overflowY = "scroll";
         } else if (len < 280) {
-        	console.log("short description");
+        	// console.log("short description");
         	html.style.overflowY = "hidden";
         }
     }
 
     function setIconLeftValue(category) {
-    	console.log("setIconLeftValue");
-    	console.log(category);
+    	
     	var width = getCurrentWidth();
     	var icon = document.getElementById('imgPath');
     	var text = document.getElementById('placeCategory');
     	var i = icon.style.left;
     	var t = text.style.left;
-    	console.log("width is " + width);
+
+    	console.log("set " + category + " icon at " + width);
+    	
     	if (width <= 768) {
 
         } else if (width > 768 && width < 1000) {
+        	text.style.top = "-2.5em";
         	if (category === "wifi-customer") {
-        		// console.log("width >= 1680 : wifi-customer");
+        		text.style.left = "5.9em";
+        		icon.style.width = "6%";
+        		icon.style.left = "-2.5em";
+        		icon.style.top = ".01em";
         	} else if (category === "wifi-free") {
+        		text.style.left = "6.5em";
+        		icon.style.width = "6%";
+        		icon.style.left = "-2.1em";
+        		icon.style.top = ".01em";
         		
         	} else if (category === "training-day") {
-
+        		text.style.left = "4.5em";
+        		icon.style.width = "6%";
+        		icon.style.left = "-3.35em";
+        		icon.style.top = ".1em";
         	} else if (category === "training-night") {
+        		text.style.left = "4.5em";
+        		icon.style.width = "6%";
+        		icon.style.left = "-3.35em";
+        		icon.style.top = ".1em";
 
         	} else if (category === "computers-retail") {
+        		text.style.left = ".85em";
+        		icon.style.width = "5%";
+        		icon.style.left = "-5.5em";
+        		icon.style.top = ".1em";
 
         	} else if (category === "computers-access") {
+        		text.style.left = "5em";
+        		icon.style.width = "5%";
+        		icon.style.left = "-3.35em";
+        		icon.style.top = ".1em";
         		
         	}
         // } else if (width > 768 && width < 1000) {
         	
         } else if (width >= 1000 && width < 1200) {
+        	console.log(">>>>>>")
+        	text.style.top = "-5.5em";
         	if (category === "wifi-customer") {
         		// console.log("width >= 1680 : wifi-customer");
+        		console.log("width >= 1000 : wifi-customer");
+        		text.style.left = "6.5em";
+        		icon.style.width = "4%";
+        		icon.style.left = "1.2em";
+        		icon.style.top = "-.335em";
         	} else if (category === "wifi-free") {
-        		
+        		console.log("width >= 1000 : wifi-free");
+        		text.style.left = "7.5em";
+        		// text.style.top = "2.1em";
+        		icon.style.width = "4%";
+        		icon.style.left = "1.85em";
+        		icon.style.top = "-.335em";
         	} else if (category === "training-day") {
 
         	} else if (category === "training-night") {
 
         	} else if (category === "computers-retail") {
+        		icon.style.width = "4%";
+        		icon.style.left = "-.15em";
+        		text.style.left = "4.25em";
+        		icon.style.top = "-0.275em";
 
         	} else if (category === "computers-access") {
-        		
+        		icon.style.width = "4%";
+        		text.style.left = "6.25em";
+        		icon.style.left = ".5em";
+        		icon.style.top = "-.25em";
         	}
         // } else if (width >= 1000 && width < 1200) {
         	
         } else if (width >= 1200 && width < 1280) {
+        	text.style.top = "-5.5em";
         	if (category === "wifi-customer") {
-        		// console.log("width >= 1680 : wifi-customer");
+        		console.log("width >= 1200 : wifi-customer");
+        		text.style.left = "6.5em";
+        		icon.style.width = "4%";
+        		icon.style.left = "1.2em";
+        		icon.style.top = "-.335em";
         	} else if (category === "wifi-free") {
+        		console.log("width >= 1200 : wifi-free");
+        		text.style.left = "7.5em";
         		
+        		icon.style.width = "4%";
+        		icon.style.left = "1.85em";
+        		icon.style.top = "-.3em";
         	} else if (category === "training-day") {
 
         	} else if (category === "training-night") {
 
         	} else if (category === "computers-retail") {
+        		icon.style.width = "4%";
+        		icon.style.left = "-.15em";
+        		text.style.left = "4.25em";
+        		icon.style.top = "-0.275em";
 
         	} else if (category === "computers-access") {
         		
@@ -960,45 +1016,46 @@ mSo.style.display="none";
         // } else if (width >= 1200 && width < 1280) {
         	
         } else if (width >= 1280 && width < 1660) {
+        	text.style.top = "2.6em";
         	if (category === "wifi-customer") {
         		console.log("width >= 1280 : wifi-customer");
-        		text.style.left = "6.5em";
-        		text.style.top = "2em";
-        		icon.style.left = "1.35em";
+        		text.style.left = "5.95em";
+        		
+        		icon.style.left = "1.65em";
         		icon.style.width = "5%";
-        		icon.style.top = "-.425em";
+        		icon.style.top = "-.38em";
         	} else if (category === "wifi-free") {
         		console.log("width >= 1280 : wifi-free");
-        		text.style.left = "7.5em";
-        		text.style.top = "2.1em";
+        		text.style.left = "6.5em";
+        		// text.style.top = "2.1em";
         		icon.style.width = "5%";
         		icon.style.left = "1.85em";
-        		icon.style.top = "-.42em";
+        		icon.style.top = "-.38em";
         	} else if (category === "training-day") {
         		console.log("width >= 1280 : training-day");
-        		text.style.left = "6.5em";
-        		text.style.top = "1.9em";
+        		text.style.left = "5.7em";
+        		// text.style.top = "1.9em";
         		icon.style.left = "1.35em";
-        		icon.style.top = "-.425em";
+        		icon.style.top = "-.3em";
         		icon.style.width = "5%";
         	} else if (category === "training-night") {
         		console.log("width >= 1280 : training-night");
-        		text.style.left = "6.5em";
-        		text.style.top = "1.9em";
+        		text.style.left = "5.5em";
+        		// text.style.top = "1.9em";
         		icon.style.width = "5%";
         		icon.style.left = "1.35em";
-        		icon.style.top = "-.425em";
+        		icon.style.top = "-.3em";
         	} else if (category === "computers-retail") {
         		console.log("width >= 1280 : computers-retail");
-        		text.style.left = "3.5em";
-        		text.style.top = "1.95em";
+        		text.style.left = "3em";
+        		// text.style.top = "1.95em";
         		icon.style.width = "4.25%";
         		icon.style.left = ".1em";
-        		icon.style.top = "-.375em";
+        		icon.style.top = "-.31em";
         	} else if (category === "computers-access") {
         		console.log("width >= 1280 : computers-access");
-        		text.style.left = "6em";
-        		text.style.top = "2.15em";
+        		text.style.left = "5.2em";
+        		// text.style.top = "2.15em";
         		icon.style.left = "1.05em";
         		icon.style.top = "-.3em";
         		icon.style.width = "4.25%";
@@ -1006,45 +1063,46 @@ mSo.style.display="none";
         // } else if (width >= 1280 && width < 1660) {
         	
         } else if (width >= 1660 && width < 1680) {
+        	text.style.top = "2.65em";
         	if (category === "wifi-customer") {
         		console.log("width >= 1660 : wifi-customer");
         		text.style.left = "5.75em";
-        		text.style.top = "2.65em";
+        		// text.style.top = "2.65em";
         		icon.style.left = "1.35em";
         		icon.style.width = "5%";
         		icon.style.top = "-.325em";
         	} else if (category === "wifi-free") {
       			console.log("width >= 1660 : wifi-free");
       			text.style.left = "7.5em";
-        		text.style.top = "2.65em";
+        		// text.style.top = "2.65em";
         		icon.style.width = "5%";
         		icon.style.left = "2.3em";
         		icon.style.top = "-.35em";  		
         	} else if (category === "training-day") {
         		console.log("width >= 1660 : training-day");
-        		text.style.left = "6.5em";
-        		text.style.top = "1.9em";
+        		text.style.left = "6em";
+        		// text.style.top = "1.9em";
         		icon.style.left = "1.35em";
-        		icon.style.top = "-.425em";
+        		icon.style.top = "-0.25em";
         		icon.style.width = "5%";	
         	} else if (category === "training-night") {
         		console.log("width >= 1660 : training-night");
-        		text.style.left = "6.5em";
-        		text.style.top = "1.9em";
+        		text.style.left = "6em";
+        		// text.style.top = "1.9em";
         		icon.style.width = "5%";
         		icon.style.left = "1.35em";
-        		icon.style.top = "-.425em";
+        		icon.style.top = "-0.25em";
         	} else if (category === "computers-retail") {
         		console.log("width >= 1660 : computers-retail");
         		text.style.left = "3.5em";
-        		text.style.top = "1.95em";
+        		// text.style.top = "1.95em";
         		icon.style.width = "4.25%";
         		icon.style.left = ".1em";
-        		icon.style.top = "-.375em";
+        		icon.style.top = "-.28em";
         	} else if (category === "computers-access") {
        			console.log("width >= 1660 : computers-access");
-       			text.style.left = "6em";
-        		text.style.top = "2.15em";
+       			text.style.left = "5.5em";
+        		
         		icon.style.left = "1.05em";
         		icon.style.top = "-.3em";
         		icon.style.width = "4.25%";
@@ -1052,38 +1110,39 @@ mSo.style.display="none";
         // } else if (width >= 1660 && width < 1680) {
         	
         } else if (width >= 1680) {
+        	text.style.top = "2em";
         	if (category === "wifi-customer") {
         		console.log("width >= 1680 : wifi-customer");
         		text.style.left = "6.5em";
-        		text.style.top = "2em";
+        		// text.style.top = "2em";
         		icon.style.left = "1.35em";
         		icon.style.width = "5%";
         		icon.style.top = "-.425em";
         	} else if (category === "wifi-free") {
         		console.log("width >= 1680 : wifi-free");
         		text.style.left = "7.5em";
-        		text.style.top = "2.1em";
+        		
         		icon.style.width = "5%";
         		icon.style.left = "1.85em";
-        		icon.style.top = "-.42em";
+        		icon.style.top = "-.425em";
         	} else if (category === "training-day") {
         		console.log("width >= 1680 : training-day");
         		text.style.left = "6.5em";
-        		text.style.top = "1.9em";
+        		// text.style.top = "1.9em";
         		icon.style.left = "1.35em";
         		icon.style.top = "-.425em";
         		icon.style.width = "5%";
         	} else if (category === "training-night") {
         		console.log("width >= 1680 : training-night");
         		text.style.left = "6.5em";
-        		text.style.top = "1.9em";
+        		// text.style.top = "1.9em";
         		icon.style.width = "5%";
         		icon.style.left = "1.35em";
         		icon.style.top = "-.425em";
         	} else if (category === "computers-retail") {
         		console.log("width >= 1680 : computers-retail");
         		text.style.left = "3.5em";
-        		text.style.top = "1.95em";
+        		// text.style.top = "1.95em";
         		icon.style.width = "4.25%";
         		icon.style.left = ".1em";
         		icon.style.top = "-.375em";
@@ -1091,7 +1150,7 @@ mSo.style.display="none";
         	} else if (category === "computers-access") {
         		console.log("width >= 1680 : computers-access");
         		text.style.left = "6em";
-        		text.style.top = "2.15em";
+        		// text.style.top = "2.15em";
         		icon.style.left = "1.05em";
         		icon.style.top = "-.3em";
         		icon.style.width = "4.25%";
@@ -1102,8 +1161,8 @@ mSo.style.display="none";
 
     function setPlaceData(json) {
 
-		console.log("setPlaceData");
-		console.log(json);
+		// console.log("setPlaceData");
+		// console.log(json);
         var imgPath = document.getElementById('imgPath');
         var hrs = json.hoursOpen[0];
 			setHours(hrs);
@@ -1164,16 +1223,21 @@ mSo.style.display="none";
     }
 
     function setDescription(str) {
+    	var test = "Courses on computer basics";
+    	console.log("setDescription:" + test.length);
     
     	var strLng = str.length;
 
-      if (str < 1) {
-      		document.getElementById('placeDescription').style.textAlign = "center";
-      		document.getElementById('placeDescription').style.overflowY = "hidden";
-    		return "Not available";
+      if (strLng < 1) {
+      		document.getElementById('dscHead').style.display = "none";
+      		document.getElementById('placeDescription').style.display = "none";
+      		// document.getElementById('placeDescription').style.textAlign = "center";
+      		// document.getElementById('placeDescription').style.overflowY = "hidden";
+    		// return "Not available";
         // document.getElementById('placeDescription').innerText = str + "??";
       } else if (strLng >= 1) {
       	fixDescriptionHeight(str);
+
       	document.getElementById('placeDescription').style.textAlign = "left";
       	return str;
       }
@@ -1196,8 +1260,8 @@ mSo.style.display="none";
 
 
       function showPm(position) {
-			console.log("showPm");
-			console.log(position);
+			// console.log("showPm");
+			// console.log(position);
 			// var latLng = [position[0], position[1]];
 
 	      	var pmOptions = {
@@ -1364,7 +1428,7 @@ mSo.style.display="none";
       	// cm.style.height = "1200px";
       }
       $scope.resetCustomMap = function() {
-      	cm.style.top = "-4.6em";
+      	// cm.style.top = "-4.6em";
       }
 
       var mobilePhoneTag = document.getElementById('phone-mob');
@@ -1473,7 +1537,8 @@ mSo.style.display="none";
 
 	    	if (num === 0) {
 	    		document.getElementById('opHours').style.display = "none";
-	         	document.getElementById('opHoursNA').style.display = "block";
+	    		document.getElementById('hrsHead').style.display = "none";
+	         	document.getElementById('opHoursNA').style.display = "none";
 	    	} else if (num >=1) {
 	    		// console.log("num >= 1");
 	    		// console.log(hrs);
@@ -1505,8 +1570,8 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 			    var thu = hrs.match(thursday);
 			    var fri = hrs.match(friday);
 			    var sat = hrs.match(saturday);
-			           console.log('sun');
-			           console.log(sun);
+			           // console.log('sun');
+			           // console.log(sun);
 
 			           if (sun != null) {
 			           	var weekHours = {
@@ -1561,6 +1626,59 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 
 	    }
 
+	    function setPanelView() {
+	   	
+	  
+		  
+		   	var mapHeight = document.querySelector("#customMap").clientHeight;
+		   	// var val = (maxHeight - 60) + "px";
+		  
+
+		   	var wrapper = document.querySelector("#windowWrapper");
+
+		   	var subvalue = (mapHeight - 40) + "px";
+		   	// wrapper.style.height = subvalue;
+
+		   	// document.querySelector('#lavie').style.maxHeight = val;
+
+		   	// document.querySelector('#lavie').style.height = maxHeight;
+
+		   	// var lvHeight = document.querySelector("#lavie").clientHeight;
+		   	var panel = document.getElementById("lavie");
+		   	var panelHeight = document.querySelector('#lavie').getBoundingClientRect().height;
+		   
+		   	panel.style.maxHeight  = (mapHeight + "px");
+		   	panel.style.minHeight = (mapHeight + "px");
+		   	panel.style.height = (mapHeight + "px");
+		   	var resizedHeight = document.querySelector('#lavie').getBoundingClientRect().height;
+		   	
+
+
+		   	// var a = getCurrentWidth();
+		   	// var b = document.querySelector("#customMap").getBoundingClientRect().height;
+		   	// var c = document.querySelector('#lavie').getBoundingClientRect().height;
+		   
+		   	// var val2 = (c - 8) + "px";
+		  
+		   	// var ww = document.querySelector("#windowWrapper");
+	
+		   	// var wwh = ww.clientHeight;
+	
+		   	// var d = (b - c);
+		   	// var e = (d / 2);
+		 
+		   	
+		   	// document.querySelector('#lavie').style.top = e + "px";
+		   	// document.querySelector('#rmv-glyph').style.top = e + "px";
+
+
+
+
+
+
+
+	   }
+
 
 	   function setWindowCss() {
 	   	
@@ -1572,6 +1690,8 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	   	console.log(val);
 
 	   	document.querySelector('#lavie').style.maxHeight = val;
+
+	   	// document.querySelector('#lavie').style.height = maxHeight;
 
 	   	var lvHeight = document.querySelector("#lavie").clientHeight;
 	   	console.log("lavie height");
@@ -1601,6 +1721,22 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	   	
 	   	document.querySelector('#lavie').style.top = e + "px";
 	   	document.querySelector('#rmv-glyph').style.top = e + "px";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	   	// angular.element(document.getElementById('lavie')).addClass('pt-page-flipInTop');
 	   	// console.log("b.scrollHeight");
 	   	// console.log(b.scrollHeight);
@@ -1627,7 +1763,6 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 
 
 
-
 	   function addListener(json, marker) {
 	   	// console.log("addListener");
 	   	// console.table(json);
@@ -1639,8 +1774,23 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	      	// console.log("^^^^check assumptions");
 	      	// console.log(json.hoursOpen);
 	      	var mapHtml = document.querySelector("#customMap");
-	      	console.log("mapHtml");
-	      	console.log(mapHtml.clientHeight);
+	      	// console.log("mapHtml");
+	      	// console.log(mapHtml.clientHeight);
+
+	      	console.log("is side panel open?");
+	     	var c = getCurrentWidth();
+
+	      	if (sidePanelOpen) {
+	      		console.log("true");
+	      		
+
+	      	} else {
+	      		console.log("false");
+	      		if (c >= 1660 && c < 1680) {
+	      			// mapHtml.style.top = "-.75em";		
+	      		}
+
+	      	}
 
 	      	if (isDesktopView()) {
 	      		
@@ -1681,7 +1831,8 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
             }
             
 	        resizeMap();
-	        setWindowCss();	
+	        // setWindowCss();	
+	        setPanelView();
 	        findActive();
 	
 	        var lat = json.location[0].lat;
@@ -2165,8 +2316,10 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 
 
 	    function fixMapWidth(width) {
-	    	// console.log("fixMapWidth");
-	    	// console.log(width);
+	    	console.log("fixMapWidth");
+	    	console.log(width);
+
+	    	var ww = document.getElementById('windowWrapper');
 
 	    	var mw = cm.style.width;
 	    	console.log(mw);
@@ -2184,40 +2337,47 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	          // console.log(cWidth + " is less than 768");
 	        } else if (width > 768 && width < 1000 && !sidePanelOpen) {
 	        	// console.log("2. 768 to 1000 -- sidePanelOpen=false");
-	        	cm.style.width = "719px";
+
+	        	cm.style.width = "724px";
 	        } else if (width > 768 && width < 1000 && sidePanelOpen) {
 	        	// console.log("2. 768 to 1000 -- sidePanelOpen=true");
-	        	cm.style.width = "65%";
+	        	ww.style.height = "612px";
+	        	cm.style.width = "78.25%";
 	        } else if (width >= 1000 && width < 1200 && !sidePanelOpen) {
 	        	// console.log("3. 1000 to 1200");
 	    		cm.style.width = "944px";
 	        } else if (width >= 1000 && width < 1200 && sidePanelOpen) {
 	        	// console.log("3. 1000 to 1200");
-	    		cm.style.width = "65%";
+	        	ww.style.height = "634px";
+	    		cm.style.width = "78.25%";
 	        } else if (width >= 1200 && width < 1280 && !sidePanelOpen) {
 	        	// console.log("4. 1200 to 1280");
 	   			cm.style.width = "1022px";
 	        } else if (width >= 1200 && width < 1280 && sidePanelOpen) {
 	        	// console.log("4. 1200 to 1280");
-	   			cm.style.width = "65%";
+	        	ww.style.height = "634px";
+	   			cm.style.width = "81.5%";
 	        } else if (width >= 1280 && width < 1660 && !sidePanelOpen) {
 	        	// console.log("5. 1280 to 1660");
-	        	cm.style.width = "1144px";
+	        	cm.style.width = "1146px";
 	        } else if (width >= 1280 && width < 1660 && sidePanelOpen) {
 	        	// console.log("5. 1280 to 1660");
-	        	cm.style.width = "800px";
+	        	ww.style.height = "586px";
+	        	cm.style.width = "860px";
 	        } else if (width >= 1660 && width < 1680 && !sidePanelOpen) {
 	        	// console.log("6. 1280 to 1660");
-	        	cm.style.width = "1135px";
+	        	cm.style.width = "1136px";
 	        } else if (width >= 1660 && width < 1680 && sidePanelOpen) {
 	        	// console.log("6. 1280 to 1660");
-	        	cm.style.width = "65%";
+	        	ww.style.height = "609px";
+	        	cm.style.width = "75.4%";
 	        } else if (width >= 1680 && !sidePanelOpen) {
 	        	// console.log("7. 1660 to infinity");
-	        	cm.style.width = "1135px";
+	        	cm.style.width = "1136px";
 	        } else if (width >= 1680 && sidePanelOpen) {
 	        	// console.log("7. 1660 to infinity");
-	        	cm.style.width = "65%";
+	        	ww.style.height = "611px";
+	        	cm.style.width = "75.4%";
 	        }
 	
 	    }
@@ -2227,6 +2387,7 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	    	  var c = getCurrentWidth();
 		      sideWindowElement.style.display = "none";
 		      mapCanvasElement.style.width = resetMapWidth(c);
+		      $scope.activeSpot.marker.setMap(null);
 	      // cm.style.width = "100%";
 	          if (innerWidth <= 768) {
 	            $scope.mobileWindowOpen = false;
@@ -2268,6 +2429,7 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
    	 	// console.log("resizeMap()");
    	 	// console.log(sidePanelOpen);
         var cWidth = getCurrentWidth();
+        var ww = document.getElementById('windowWrapper');
         var c = getCurrentWidth();
         if (c <= 768) {
         	// console.log("1. 0 to 768");
@@ -2283,34 +2445,39 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
           // console.log(cWidth + " is less than 768");
         } else if (c > 768 && c < 1000) {
         	// console.log("2. 768 to 1000");
-        	mapCanvasElement.style.width = "65%";
-            mapCanvasElement.style.borderRight = "1px solid #ccc";
+        	mapCanvasElement.style.width = "78.25%";
+        	ww.style.height = "612px";
+            mapCanvasElement.style.borderRight = "1px solid #d4dae0";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1000 && c < 1200) {
         	// console.log("3. 1000 to 1200");
-        	mapCanvasElement.style.width = "65%";
-            mapCanvasElement.style.borderRight = "1px solid #ccc";
+        	mapCanvasElement.style.width = "78.25%";
+            mapCanvasElement.style.borderRight = "1px solid #d4dae0";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1200 && c < 1280) {
         	// console.log("4. 1200 to 1280");
-        	mapCanvasElement.style.width = "65%";
-            mapCanvasElement.style.borderRight = "1px solid #ccc";
+        	// mapCanvasElement.style.left = "-5.05em";
+        	// mapCanvasElement.style.top = "-7.99em";
+        	mapCanvasElement.style.width = "81.5%";
+            mapCanvasElement.style.borderRight = "1px solid #d4dae0";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1280 && c < 1660) {
         	// console.log("5. 1280 to 1660");
-        	mapCanvasElement.style.width = "800px";
-            mapCanvasElement.style.borderRight = "1px solid #ccc";
+        	mapCanvasElement.style.width = "860px";
+            mapCanvasElement.style.borderRight = "1px solid #d4dae0";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1660 && c < 1680) {
         	// console.log("6. 1280 to 1660");
-        	mapCanvasElement.style.width = "65%";
-            mapCanvasElement.style.borderRight = "1px solid #ccc";
+        	mapCanvasElement.style.width = "75.4%";
+        	// mapCanvasElement.style.top = "-.75em";
+            mapCanvasElement.style.borderRight = "1px solid #d4dae0";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1680) {
         	// console.log("7. 1660 to infinity");
-        	mapCanvasElement.style.width = "65%";
-
-            mapCanvasElement.style.borderRight = "1px solid #ccc";
+        	mapCanvasElement.style.width = "75.4%";
+        	
+        	// mapCanvasElement.style.top = '-4.4em';
+            mapCanvasElement.style.borderRight = "1px solid #d4dae0";
             sideWindowElement.style.display = "initial";
         }
 
@@ -2327,6 +2494,54 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
    	 }
 
 
+   	 function checkPanelCss(viewportWidth) {
+   	 	console.log("checkPanelCss");
+   	 	console.log("..viewportWidth: " + viewportWidth);
+   	 	console.log();
+   	 	var vw = viewportWidth;
+   	 	var m = document.querySelector("#customMap");
+   	 	var h = m.getBoundingClientRect().height;
+   	 	var p = document.querySelector("#lavie");
+   	 	var val = document.querySelector("#sw").style.display.length;
+   	 	console.log("sideWindow.style.display");
+   	 	if (val === 0) {
+   	 		var panelOpen = false;
+   	 	} else if (val >= 1) {
+   	 		var panelOpen = true;
+   	 	}
+
+
+   	 	if (panelOpen) {
+   	 		console.log("panelOpen");
+   	 		if (vw <= 768) {
+         
+	        } else if (vw > 768 && vw < 1000) {
+	  
+	   
+	        } else if (vw >= 1000 && vw < 1200) {
+
+
+	        } else if (vw >= 1200 && vw < 1280) {
+	  
+	   		
+	        } else if (vw >= 1280 && vw < 1660) {
+	     
+	
+	        } else if (vw >= 1660 && vw < 1680) {
+	        	
+	       
+	        } else if (vw >= 1680) {
+	        
+	  
+	        }
+   	 	} else {
+   	 		console.log("!panelOpen");
+   	 	}
+
+   	 	
+	  
+   	 }
+
    	  function resetMapWidth(width) {
    	  	if (width <= 768) {
         	console.log("1. 0 to 768");
@@ -2342,22 +2557,22 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
           // console.log(cWidth + " is less than 768");
         } else if (width > 768 && width < 1000) {
         	console.log("2. 768 to 1000");
-        	cm.style.width = "719px";
+        	cm.style.width = "724px";
         } else if (width >= 1000 && width < 1200) {
         	console.log("3. 1000 to 1200");
-    		cm.style.width = "939px";
+    		cm.style.width = "944px";
         } else if (width >= 1200 && width < 1280) {
         	console.log("4. 1200 to 1280");
-   			cm.style.width = "1017px";
+   			cm.style.width = "1022px";
         } else if (width >= 1280 && width < 1660) {
         	console.log("5. 1280 to 1660");
-        	cm.style.width = "1140px";
+        	cm.style.width = "1146px";
         } else if (width >= 1660 && width < 1680) {
         	console.log("6. 1280 to 1660");
-        	cm.style.width = "1130px";
+        	cm.style.width = "1136px";
         } else if (width >= 1680) {
         	console.log("7. 1680 to infinity");
-        	cm.style.width = "1135px";
+        	cm.style.width = "1136px";
         }
 	  }
 
@@ -2587,16 +2802,23 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	      $scope.mapOptions = {
 	        center: {lat: $scope.lat, lng: $scope.lng},
 	        zoom: 9,
-          navigationControlOptions: {
-            style: google.maps.NavigationControlStyle.SMALL
-          },
-	        mapTypeId: google.maps.MapTypeId.ROADMAP
-	      };
+	        disableDoubleClickZoom: true,
+	        navigationControlOptions: {
+	            style: google.maps.NavigationControlStyle.SMALL
+	        },
+		    mapTypeId: google.maps.MapTypeId.ROADMAP
+		  };
+
 
 
     
 
 	      $scope.map = new google.maps.Map(document.getElementById('customMap'), $scope.mapOptions);
+
+
+	      console.log($scope.map);
+	      var bounds = $scope.map.getBounds();
+	      console.log(bounds);
 
 	      $scope.map.controls[google.maps.ControlPosition.TOP_LEFT].push($scope.input);
 
@@ -2611,7 +2833,7 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 			    // do something only the first time the map is loaded
           $scope.showMapControls = true
           zoomEnter()
-			    console.log("============================tilesloaded")
+			    // console.log("============================tilesloaded")
 			    $timeout(6000, loadMarkersOnInit(true), true)
 			    initFreeWifiButton()
 			    setWifiMarkers()
@@ -2653,6 +2875,11 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	        center = $scope.map.getCenter();
 	      }
 
+	      function triggerResize() {
+	      	console.log("triggering resize");
+	      	google.maps.event.trigger($scope.map, 'resize')
+	      }
+
 	      google.maps.event.addDomListener($scope.map, 'idle', function() {
 	        calculateCenter();
 	      });
@@ -2660,7 +2887,12 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	      google.maps.event.addDomListener(window, 'resize', function() {
 	      	var c = getCurrentWidth();
 	      	fixMapWidth(c);
-	     
+	      	var b;
+	      	triggerResize();
+	     	checkPanelCss(c);
+	     	// console.log("resizing while active => " + $scope.activeSpot.primaryCategory);
+	     	var actCat = $scope.activeSpot.meta.primaryCategory;
+	     	setIconLeftValue(actCat);
 	        $scope.map.setCenter(center);
 	        var bounds = $scope.map.getBounds();
 	      });
