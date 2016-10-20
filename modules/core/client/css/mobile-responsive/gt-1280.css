@@ -202,7 +202,7 @@ div#placeCategory {
 }
 	#new-service-button {
 	    position: relative;
-	  
+	      left: 0;
 	    top: 3em;
 	}
 	i.fa.fa-phone {

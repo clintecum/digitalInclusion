@@ -11,28 +11,28 @@
 	    
 
 	}
-	#header h1 {
+/*	#header h1 {
 	    height: 8.8em;
 	    left: -3em;
 	}
 	#header h1 {
-    /*left: -3.05em;*/
+
 }
 	#header p {
 	top: -10.2em;
-	}
+	}*/
 	main#main-page {
 		width: 124.5%;
 	}
 	section#customMap {
-		       width: 93%;
+		       width: 94%;
 	}
 	ul.actions.fit.small {
 	 
 	}
 	div#buttons-wrapper {
-		top: 1.85em;
-		left: 11.4em;
+		
+		left: 12.8em;
 	}
 	div#mobServiceOverlay {
 	    position: fixed;

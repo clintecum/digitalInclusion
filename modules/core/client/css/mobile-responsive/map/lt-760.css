@@ -14,13 +14,16 @@
 	}
 	#header h1 {
 	    margin-top: .6em;
-	    left: -1.5em;
+	    left: 0;
 	    margin: .3em auto .2em auto;
-	    width: 36em;
+	    /*width: 36em;*/
 	}
 
-	#header p {
-	
+	#header p#mobP {
+		letter-spacing: normal;
+		position: relative;
+		top: -20.3em;
+		left: -12px;
 	}
 	main#main-page {
 		width: 124.5%;
@@ -32,12 +35,16 @@
 	     left: 30%;
 	}
 	div#buttons-wrapper {
-	    top: 2.4em;
-	    left: 13em;
-	}
+    top: -2.15em;
+    left: 14.05em;
+}
 }
 
 @media (max-width: 750px) {
+	div#buttons-wrapper {
+	   
+	       left: 13.55em;
+	}
 	#header h1 {
 
 	}

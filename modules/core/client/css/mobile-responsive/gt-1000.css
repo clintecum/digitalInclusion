@@ -154,7 +154,7 @@ div#windowWrapper {
 	}
 	#new-service-button {
 	    position: relative;
-	    left: 15em;
+	    left: -15em;
 	    top: 10em;
 	}
 	md-card md-card-header#defaultGray {

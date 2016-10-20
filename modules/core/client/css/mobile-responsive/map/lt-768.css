@@ -1,4 +1,10 @@
 @media (max-width: 768px) {
+	#header p#mobP {
+    letter-spacing: normal;
+    position: relative;
+    top: -19.8em;
+    left: -32px;
+}
 	section#customMap {
 	    height: 615px;
 	    border-left: 1px solid #626f64;
@@ -181,5 +187,13 @@ div#mobServiceOverlay {
 	    display: initial;
 	    box-shadow: none;
 	    z-index: 99999;
+	}
+	
+
+	.map-row {
+	    position: relative;
+	    top: -11.7em;
+	    margin: 0;
+	    padding: 0;
 	}
 }

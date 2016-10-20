@@ -435,6 +435,7 @@ button.md-button.new-service-button span.ng-scope {
     }
 	.navbar-inverse .navbar-toggle {
 	    border-color: #757575;
+            border: none;
 	}
 	.navbar-inverse .navbar-brand {
 	    color: #212121;

@@ -24,9 +24,7 @@
 
 
 
-      var a = $window.innerWidth;
-      var html = document.querySelector("#header");
-      var b = html.innerWidth;
+     
 
 
 

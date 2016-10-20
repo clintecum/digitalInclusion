@@ -11,13 +11,13 @@
 	    
 
 	}
-	#header h1 {
+	/*#header h1 {
 		left: .4em;
 		width: 24em;
 	}
 	#header p {
 	
-	}
+	}*/
 	main#main-page {
 		width: 124.5%;
 	}
@@ -28,7 +28,7 @@
 	     left: .75%;
 	}
 	div#buttons-wrapper {
-	    top: 2.1em;
-	    left: 7em;
+	    /*top: 2.1em;*/
+	    left: 6.4em;
 	}
 }

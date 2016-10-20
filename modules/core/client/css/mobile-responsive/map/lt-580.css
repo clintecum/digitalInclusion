@@ -11,14 +11,14 @@
 	    
 
 	}
-	#header h1 {
+	/*#header h1 {
 		    left: -1.75em;
 		    left: -.1275em;
 		    width: 27em;
 	}
 	#header p {
 		margin-left: 1.5em;
-	}
+	}*/
 	main#main-page {
 		width: 124.5%;
 	}
@@ -29,7 +29,7 @@
 	     left: 2.75%;
 	}
 	div#buttons-wrapper {
-    top: 2.1em;
+    /*top: 2.1em;*/
     left: 6.9em;
 }
 }

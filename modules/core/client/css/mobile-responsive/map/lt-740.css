@@ -6,12 +6,15 @@
 	body {
 
 	}
+	button.navbar-toggle {
+		left: 54em;
+	}
 	#footer {
 
 	    
 
 	}
-	#header h1 {
+/*	#header h1 {
 		padding-top: .75em;
 	}
 	#header h1 {
@@ -25,23 +28,29 @@
 	#header h1 {
 
     left: -2.5em;
-}
+}*/
 	main#main-page {
 		width: 124.5%;
 	}
 	section#customMap {
-		width: 92.5%;
+		    width: 94%;
 	}
 	ul.actions.fit.small {
 	 left: 28%;
 	}
+
 	div#buttons-wrapper {
-    top: 2em;
-    left: 11.9em;
+	
+	    left: 13.5em;
 	}
+		
 }
 
 @media (max-width: 730px) {
+	div#buttons-wrapper {
+	   
+	       left: 13em;
+	}
 	#header h1 {
 
 	}

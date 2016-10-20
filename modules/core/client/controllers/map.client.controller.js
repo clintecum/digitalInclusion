@@ -907,7 +907,7 @@ mSo.style.display="none";
     	var i = icon.style.left;
     	var t = text.style.left;
 
-    	console.log("set " + category + " icon at " + width);
+    	// console.log("set " + category + " icon at " + width);
     	
     	if (width <= 768) {
 
@@ -1224,7 +1224,7 @@ mSo.style.display="none";
 
     function setDescription(str) {
     	var test = "Courses on computer basics";
-    	console.log("setDescription:" + test.length);
+    	// console.log("setDescription:" + test.length);
     
     	var strLng = str.length;
 
@@ -1777,15 +1777,15 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	      	// console.log("mapHtml");
 	      	// console.log(mapHtml.clientHeight);
 
-	      	console.log("is side panel open?");
+	      	// console.log("is side panel open?");
 	     	var c = getCurrentWidth();
 
 	      	if (sidePanelOpen) {
-	      		console.log("true");
+	      		// console.log("true");
 	      		
 
 	      	} else {
-	      		console.log("false");
+	      		// console.log("false");
 	      		if (c >= 1660 && c < 1680) {
 	      			// mapHtml.style.top = "-.75em";		
 	      		}
@@ -1811,7 +1811,7 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
             var c = getCurrentWidth();
 
             if (c <= 768) {
-          	  console.log('less than 768');
+          	  // console.log('less than 768');
         
 
           	  $scope.soActive = true;
@@ -2316,13 +2316,13 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 
 
 	    function fixMapWidth(width) {
-	    	console.log("fixMapWidth");
-	    	console.log(width);
+	    	// console.log("fixMapWidth");
+	    	// console.log(width);
 
 	    	var ww = document.getElementById('windowWrapper');
 
 	    	var mw = cm.style.width;
-	    	console.log(mw);
+	    	// console.log(mw);
 	   	  	if (width <= 768) {
 	        	// console.log("1. 0 to 768");
 	          // $scope.mobileMod = true;
@@ -2405,7 +2405,7 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 
       $scope.closeServiceOverlay = function() {
       	// if (cWidth > 600) {
-      		console.log("clickServiceOverlay()");
+      		// console.log("clickServiceOverlay()");
       		document.getElementById('mobServiceOverlay').style.display = "none";
 
       	// }
@@ -2495,15 +2495,15 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 
 
    	 function checkPanelCss(viewportWidth) {
-   	 	console.log("checkPanelCss");
-   	 	console.log("..viewportWidth: " + viewportWidth);
-   	 	console.log();
+   	 	// console.log("checkPanelCss");
+   	 	// console.log("..viewportWidth: " + viewportWidth);
+   	 	// console.log();
    	 	var vw = viewportWidth;
    	 	var m = document.querySelector("#customMap");
    	 	var h = m.getBoundingClientRect().height;
    	 	var p = document.querySelector("#lavie");
    	 	var val = document.querySelector("#sw").style.display.length;
-   	 	console.log("sideWindow.style.display");
+   	 	// console.log("sideWindow.style.display");
    	 	if (val === 0) {
    	 		var panelOpen = false;
    	 	} else if (val >= 1) {
@@ -2512,7 +2512,7 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 
 
    	 	if (panelOpen) {
-   	 		console.log("panelOpen");
+   	 		// console.log("panelOpen");
    	 		if (vw <= 768) {
          
 	        } else if (vw > 768 && vw < 1000) {
@@ -2535,7 +2535,7 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	  
 	        }
    	 	} else {
-   	 		console.log("!panelOpen");
+   	 		// console.log("!panelOpen");
    	 	}
 
    	 	
@@ -2816,9 +2816,9 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	      $scope.map = new google.maps.Map(document.getElementById('customMap'), $scope.mapOptions);
 
 
-	      console.log($scope.map);
+	      // console.log($scope.map);
 	      var bounds = $scope.map.getBounds();
-	      console.log(bounds);
+	      // console.log(bounds);
 
 	      $scope.map.controls[google.maps.ControlPosition.TOP_LEFT].push($scope.input);
 
@@ -2876,7 +2876,7 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	      }
 
 	      function triggerResize() {
-	      	console.log("triggering resize");
+	      	// console.log("triggering resize");
 	      	google.maps.event.trigger($scope.map, 'resize')
 	      }
 
@@ -2890,9 +2890,13 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	      	var b;
 	      	triggerResize();
 	     	checkPanelCss(c);
+	     	// console.log(sidePanelOpen);
 	     	// console.log("resizing while active => " + $scope.activeSpot.primaryCategory);
-	     	var actCat = $scope.activeSpot.meta.primaryCategory;
-	     	setIconLeftValue(actCat);
+	     	if (c > 768) {
+	     		var actCat = $scope.activeSpot.meta.primaryCategory;
+	     		setIconLeftValue(actCat);
+	     	}
+	     	
 	        $scope.map.setCenter(center);
 	        var bounds = $scope.map.getBounds();
 	      });

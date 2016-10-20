@@ -12,7 +12,7 @@
 
 	}
 
-	#header h1 {
+/*	#header h1 {
 	
 	}
 	#header p {
@@ -21,20 +21,19 @@
 	#header h1 {
     padding-top: .75em;
     width: 36em;
-}
+}*/
 	main#main-page {
 		width: 124.5%;
 	}
 	section#customMap {
-		    width: 93%;
+		    width: 94%;
 	}
 	ul.actions.fit.small {
 	 
 	}
 	div#buttons-wrapper {
-	    top: 4.5em;
-	        top: 1.75em;
-	    left: 10.85em;
+	   
+	    left: 12.25em;
 	}
 	a#exit-service-overlay.fa-close {
 
@@ -45,6 +44,10 @@
 	    /*width: 50%;*/
 	    height: 11em;
 
+	}
+
+	button.navbar-toggle {
+		left: 50em;
 	}
 
 }

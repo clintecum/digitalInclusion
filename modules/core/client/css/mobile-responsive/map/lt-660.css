@@ -11,17 +11,17 @@
 	    
 
 	}
-	#header h1 {
+	/*#header h1 {
 		left: -4.3em;
 	}
 	#header p {
 	
-	}
+	}*/
 	main#main-page {
 		width: 124.5%;
 	}
 	section#customMap {
-	
+		    margin-left: 1.5em;
 	}
 	ul.actions.fit.small {
 	     left: 22.5%;
@@ -31,15 +31,22 @@
 	    top: -1.8em;
 	}
 	div#buttons-wrapper {
-    /*top: 4.5em;*/
-    left: 9.65em;
-}
+	    /*top: 4.5em;*/
+	    left: 11em;
+	}
+
+	.map-row {
+	    position: relative;
+	    top: -11em;
+	    margin: 0;
+	    padding: 0;
+	}
 }
 
 @media (max-width: 650px) {
-	#header h1 {
+	/*#header h1 {
 		left: -4.5em;
-	}
+	}*/
 	#header p {
 
 	}
